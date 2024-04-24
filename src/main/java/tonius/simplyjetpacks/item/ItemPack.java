@@ -172,7 +172,9 @@ public class ItemPack<T extends PackBase> extends ItemArmor implements IControll
     @SuppressWarnings("unchecked")
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (Entry<Integer, T> e : this.packs.entrySet()) {
-            e.getValue().addSubItems(this, e.getKey(), list);
+            if (e.getValue() != null) {
+                e.getValue().addSubItems(this, e.getKey(), list);
+            }
         }
     }
     
@@ -180,7 +182,11 @@ public class ItemPack<T extends PackBase> extends ItemArmor implements IControll
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister register) {
         for (T pack : this.packs.values()) {
-            pack.registerIcons(register, this.modType);
+            if (pack != null) {
+                pack.registerIcons(register, this.modType);
+            } else {
+                System.out.println("Null pack from mod " + this.modType + " ! Skipping.");
+            }
         }
     }
     

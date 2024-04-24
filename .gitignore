@@ -4,6 +4,7 @@ eclipse/
 .project
 .gradle/
 .settings/
+.idea/
 bin/
 repo/
 run/

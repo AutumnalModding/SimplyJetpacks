@@ -37,6 +37,10 @@ public class Packs {
             fluxPackTE4 = new FluxPack(4, EnumRarity.rare, "fluxPackTE4");
             fluxPackTE4Armored = (FluxPack) new FluxPack(4, EnumRarity.rare, "fluxPackTE4").setIsArmored(true).setPlatingMeta(3);
         }
+
+        if (ModType.REDSTONE_ARSENAL.loaded && !ModType.THERMAL_EXPANSION.loaded) {
+            jetplateRA = (Jetpack) new JetPlate(5, EnumRarity.epic, "jetplateRA").setFluxBased(true);
+        }
         
         if (ModType.ENDER_IO.loaded) {
             jetpackEIO1 = new Jetpack(1, EnumRarity.common, "jetpackEIO1");
@@ -81,6 +85,7 @@ public class Packs {
     public static Jetpack jetpackTE4;
     public static Jetpack jetpackTE4Armored;
     public static Jetpack jetpackTE5;
+    public static Jetpack jetplateRA;
     public static FluxPack fluxPackTE1;
     public static FluxPack fluxPackTE2;
     public static FluxPack fluxPackTE2Armored;

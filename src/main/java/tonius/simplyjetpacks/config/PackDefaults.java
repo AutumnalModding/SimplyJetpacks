@@ -178,6 +178,25 @@ public class PackDefaults {
             d.armorFuelPerHit = 160;
             d.enchantability = 10;
         }
+
+        if (ModType.REDSTONE_ARSENAL.loaded && !ModType.THERMAL_EXPANSION.loaded) {
+            d = new PackDefaults("jetplateRA", "Flux-Infused JetPlate (Redstone Arsenal)");
+            d.fuelCapacity = 60000000;
+            d.fuelUsage = 850;
+            d.fuelPerTickIn = 200000;
+            d.fuelPerTickOut = 32000;
+            d.armorReduction = 12;
+            d.armorFuelPerHit = 240;
+            d.enchantability = 20;
+            d.speedVertical = 0.9D;
+            d.accelVertical = 0.15D;
+            d.speedVerticalHover = 0.45D;
+            d.speedVerticalHoverSlow = 0.0D;
+            d.speedSideways = 0.21D;
+            d.sprintSpeedModifier = 2.4D;
+            d.sprintFuelModifier = 6.0D;
+            d.emergencyHoverMode = true;
+        }
         
         if (ModType.ENDER_IO.loaded) {
             d = new PackDefaults("jetpackEIO1", "Conductive Iron Jetpack (EIO 1)");

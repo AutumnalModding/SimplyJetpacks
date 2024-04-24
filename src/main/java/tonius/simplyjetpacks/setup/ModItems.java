@@ -40,7 +40,7 @@ public abstract class ModItems {
     public static void preInit() {
         integrateTE = ModType.THERMAL_EXPANSION.loaded && Config.enableIntegrationTE;
         integrateTD = ModType.THERMAL_DYNAMICS.loaded && integrateTE;
-        integrateRA = ModType.REDSTONE_ARSENAL.loaded && integrateTE;
+        integrateRA = ModType.REDSTONE_ARSENAL.loaded;
         integrateEIO = ModType.ENDER_IO.loaded && Config.enableIntegrationEIO;
         integrateBC = ModType.BUILDCRAFT.loaded && Config.enableIntegrationBC;
         
@@ -101,6 +101,13 @@ public abstract class ModItems {
             fluxPackTE4 = fluxPacksTE.putPack(4, Packs.fluxPackTE4);
             fluxPackTE4Armored = fluxPacksTE.putPack(104, Packs.fluxPackTE4Armored);
         }
+
+        if (!integrateTE && integrateRA) {
+            System.out.println("Loading RA items without TE...");
+            jetpacksRA = new ItemJetpack(ModType.REDSTONE_ARSENAL, "jetpacks");
+            jetplateRA = jetpacksRA.putPack(5, Packs.jetplateRA);
+        }
+
         if (integrateEIO) {
             jetpacksEIO = new ItemJetpack(ModType.ENDER_IO, "jetpacksEIO");
             jetpackEIO1 = jetpacksEIO.putPack(1, Packs.jetpackEIO1);
@@ -435,6 +442,8 @@ public abstract class ModItems {
     public static ItemJetpack jetpacksEIO = null;
     public static ItemFluxPack fluxPacksEIO = null;
     public static ItemJetpack jetpacksBC = null;
+    public static ItemJetpack jetpacksRA = null;
+
     public static ItemMeta components = null;
     public static ItemMeta armorPlatings = null;
     public static ItemMeta particleCustomizers = null;
@@ -461,6 +470,7 @@ public abstract class ModItems {
     public static ItemStack fluxPackTE3Armored = null;
     public static ItemStack fluxPackTE4 = null;
     public static ItemStack fluxPackTE4Armored = null;
+    public static ItemStack jetplateRA = null;
     
     public static ItemStack jetpackEIO1 = null;
     public static ItemStack jetpackEIO1Armored = null;

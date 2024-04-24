@@ -5,8 +5,8 @@
 	    "authorList": [ "tonius11" ],
 	    "description": "Redstone Flux jetpacks and more",
 	    "credits": "Team CoFH, CrazyPants, Pathaleon, sk89q, Cybercat, dand0, nabijaczleweli, kevba10, and anyone else who helped making the mod, directly or indirectly",
-	    "version": "${version}",
-	    "mcversion": "${mcversion}",
+	    "version": "${modVersion}",
+	    "mcversion": "${minecraftVersion}",
 	    "logoFile": "assets/simplyjetpacks/logo.png",
 	    "url": "http://www.curse.com/mc-mods/minecraft/simply-jetpacks"
 	}
