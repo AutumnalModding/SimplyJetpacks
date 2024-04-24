@@ -4,6 +4,5 @@
 
 dependencies {
     implementation deobfCurse("cofh-core-69162:2388750")
-    implementation deobfCurse("redstone-arsenal-70631:2277490")
     implementation 'org.reflections:reflections:0.10.2'
 }
