@@ -76,10 +76,10 @@ public class JetPlate extends Jetpack {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister register, ModType modType) {
         super.registerIcons(register, modType);
-        if (modType != ModType.THERMAL_EXPANSION || !ModType.REDSTONE_ARMORY.loaded) {
-            return;
-        }
+        System.out.println("mod type: " + modType);
+
         this.iconEnderium = register.registerIcon(SimplyJetpacks.RESOURCE_PREFIX + this.getBaseName(true) + modType.suffix + ".enderium");
+        System.out.println("icon enderium: " + this.iconEnderium);
     }
     
     @Override

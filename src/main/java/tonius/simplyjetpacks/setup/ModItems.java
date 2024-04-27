@@ -222,7 +222,7 @@ public abstract class ModItems {
         
         ItemHelper.addShapedOreRecipe(leatherStrap, "LIL", "LIL", 'L', Items.leather, 'I', "ingotIron");
         
-        Object dustCoal = OreDictionary.getOres("dustCoal").size() > 0 ? "dustCoal" : new ItemStack(Items.coal);
+        Object dustCoal = !OreDictionary.getOres("dustCoal").isEmpty() ? "dustCoal" : new ItemStack(Items.coal);
         ItemHelper.addShapedOreRecipe(particleDefault, " D ", "DCD", " D ", 'C', dustCoal, 'D', Blocks.torch);
         ItemHelper.addShapedOreRecipe(particleNone, " D ", "DCD", " D ", 'C', dustCoal, 'D', "blockGlass");
         ItemHelper.addShapedOreRecipe(particleSmoke, " C ", "CCC", " C ", 'C', dustCoal);
@@ -291,14 +291,13 @@ public abstract class ModItems {
                 
                 if (ModType.REDSTONE_ARMORY.loaded) {
                     ItemHelper.addGearRecipe(enderiumUpgrade, "ingotEnderium", "slimeball");
-                    GameRegistry.addRecipe(new UpgradingRecipe(jetpackTE5, "U", "J", 'J', jetplateRA, 'U', enderiumUpgrade));
+                    GameRegistry.addRecipe(new UpgradingRecipe(jetpackTE5, "U", "J", 'J', jetpackTE5, 'U', enderiumUpgrade));
                 }
             }
         }
 
         if (!integrateTE && integrateRA) {
             if (ModType.REDSTONE_ARMORY.loaded) {
-                ItemHelper.addGearRecipe(enderiumUpgrade, "ingotEnderium", "slimeball");
                 GameRegistry.addRecipe(new UpgradingRecipe(jetplateRA, "U", "J", 'J', jetplateRA, 'U', enderiumUpgrade));
             }
          }
