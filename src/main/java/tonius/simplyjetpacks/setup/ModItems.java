@@ -290,6 +290,13 @@ public abstract class ModItems {
                 }
             }
         }
+
+        if (!integrateTE && integrateRA) {
+            if (ModType.REDSTONE_ARMORY.loaded) {
+                ItemHelper.addGearRecipe(enderiumUpgrade, "ingotEnderium", "slimeball");
+                GameRegistry.addRecipe(new UpgradingRecipe(jetpackTE5, "U", "J", 'J', jetpackTE5, 'U', enderiumUpgrade));
+            }
+         }
         
         if (integrateEIO) {
             ItemHelper.addShapedOreRecipe(thrusterEIO1, "ICI", "PCP", "DSD", 'I', "ingotConductiveIron", 'P', EIOItems.redstoneConduit, 'C', EIOItems.basicCapacitor, 'D', EIOItems.basicGear, 'S', "dustRedstone");
