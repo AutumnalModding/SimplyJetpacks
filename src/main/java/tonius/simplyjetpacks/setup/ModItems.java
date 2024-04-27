@@ -176,6 +176,11 @@ public abstract class ModItems {
             armorPlatingTE3 = armorPlatings.addMetaItem(3, new MetaItem("armorPlating.te.3", null, EnumRarity.common), true, false);
             armorPlatingTE4 = armorPlatings.addMetaItem(4, new MetaItem("armorPlating.te.4", null, EnumRarity.rare), true, false);
         }
+
+        if (!integrateTE && integrateRA && ModType.REDSTONE_ARMORY.loaded) {
+            enderiumUpgrade = components.addMetaItem(59, new MetaItem("enderiumUpgrade", "enderiumUpgrade", EnumRarity.rare), true, false);
+        }
+
         if (integrateEIO) {
             thrusterEIO1 = components.addMetaItem(21, new MetaItem("thruster.eio.1", null, EnumRarity.common), true, false);
             thrusterEIO2 = components.addMetaItem(22, new MetaItem("thruster.eio.2", null, EnumRarity.common), true, false);
@@ -286,10 +291,17 @@ public abstract class ModItems {
                 
                 if (ModType.REDSTONE_ARMORY.loaded) {
                     ItemHelper.addGearRecipe(enderiumUpgrade, "ingotEnderium", "slimeball");
-                    GameRegistry.addRecipe(new UpgradingRecipe(jetpackTE5, "U", "J", 'J', jetpackTE5, 'U', enderiumUpgrade));
+                    GameRegistry.addRecipe(new UpgradingRecipe(jetpackTE5, "U", "J", 'J', jetplateRA, 'U', enderiumUpgrade));
                 }
             }
         }
+
+        if (!integrateTE && integrateRA) {
+            if (ModType.REDSTONE_ARMORY.loaded) {
+                ItemHelper.addGearRecipe(enderiumUpgrade, "ingotEnderium", "slimeball");
+                GameRegistry.addRecipe(new UpgradingRecipe(jetplateRA, "U", "J", 'J', jetplateRA, 'U', enderiumUpgrade));
+            }
+         }
         
         if (integrateEIO) {
             ItemHelper.addShapedOreRecipe(thrusterEIO1, "ICI", "PCP", "DSD", 'I', "ingotConductiveIron", 'P', EIOItems.redstoneConduit, 'C', EIOItems.basicCapacitor, 'D', EIOItems.basicGear, 'S', "dustRedstone");
