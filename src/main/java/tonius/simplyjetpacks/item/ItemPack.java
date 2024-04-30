@@ -169,7 +169,6 @@ public class ItemPack<T extends PackBase> extends ItemArmor implements IControll
     
     @Override
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings("unchecked")
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (Entry<Integer, T> e : this.packs.entrySet()) {
             if (e.getValue() != null) {

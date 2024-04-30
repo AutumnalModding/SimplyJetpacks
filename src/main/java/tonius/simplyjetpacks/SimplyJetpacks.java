@@ -67,7 +67,6 @@ public class SimplyJetpacks {
         try {
             Class.forName("cofh.lib.util.helpers.FireworksHelper$Explosion");
             logger.info("Successfully found CoFHLib");
-            return;
             
         } catch (ClassNotFoundException e) {
             logger.error("Could not find CoFHLib!");
